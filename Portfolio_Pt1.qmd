@@ -1,0 +1,102 @@
+---
+title: "Portfolio-Pt1"
+author: "Jasmine Lantaca"
+format: html
+editor: source
+execute: 
+  echo: true
+  error: true
+---
+
+# Portfolio Part 1
+
+## Data Description
+
+Identify your data source.
+
+> My data source comes from data.gov and it redirected me to another website that showed various organizations with their datasets; I selected the Califronia Health and Human Service Agency.
+
+> https://data.chhs.ca.gov/dataset/eligible-individuals-under-age-21-enrolled-in-medi-cal-by-county and the one that I select is based on the race and ethnicity.
+
+Describe your data, including variables and data types.
+
+```{r}
+#| label: Checking my data
+
+race <- read.csv("Data_Raw/7.4-race-ethnicity-statewide_q4_2024_odp.csv")
+str(race)
+```
+> My data is made up of eligible individuals under age 21 that were in enrolled in Medi-Cal from 2012 to the end of 2024.
+
+> The variable names are as follows: Reporting Period, Race Ethnicity, and Number of Eligible Individuals. All of these variables are characters.
+
+Identify the research questions you want to answer.
+
+> Question 1: From 2012 to 2024, what is the top 5 and bottom 5 race/ethnicity that has the most/least eligible individuals?
+
+> Question 2: For the top 10 race/ethncity, how has Medi-Cal eligibilty for the youth has changed over time?
+
+> Question 3: What racial qroups currently makes up the largest share of Medi-Cal eligible youth?
+
+## Data Visualization
+
+What do you want your final visualizations to look like?
+
+> For Question 1, the main visualization would be a bar graph or column graph with y-axis being the race/ethnicity, x-axis would be the total number of eligible individuals.
+
+> For Question 2, the main visualization would be multi-line graph (one line per race) with the x-axis being the years from 2012 to 2024 and y-axis being the number of eligible individual.
+
+> For Question 3, the main visualization would be a bar graph or column graph with y-axis being the race/ethnicity, x-axis would be the race/ethnicities and the number of eligible individuals.
+
+What do you want to highlight on your final visualizations in order to answer your research questions? How do you plan to do that?
+
+> Question 1: I want to highlight what race/ethncity in the US that have their youth eligible for Medi-Cal over the years and compare each race to see the difference.
+
+> Question 2: I want to see the trend in Medi-Cal eligibility of different races and see if there is patterns within the top 10 races and how it can relate to what we see in the real world (policies, immigration, etc).
+
+> Question 3: I want to reveal which race makes up the majority today.
+
+What is missing from your data or would need to change in your data to create those visualizations?
+
+> A lot of what I have to do is basic variable renaming, but there may be some tidyverse functions I need to do in order to get some of the data I need like total individuals per year for each race and some transformation to get visualizations.
+
+## Data Cleaning
+
+The answer to at least three of these questions should be "Yes" for the data to meet the necessary standards to demonstrate your cleaning. Your data source should not be an already perfectly prepared data set.
+
+Do you need to reformat any variables into different types (e.g. factors, time, dates, strings)? Or remove information from variable values?
+
+> Yes.
+
+Do you need to deal with any missing data, especially missing data coded other than NA?
+
+> Nope.
+
+Do you need to filter your data? How?
+
+> Yes, I need to filter my data depending what question I am trying to find the visualization for. I will use filter function and probablity also use string detect for the function of containing to create and find certain data. For example, find the total number of eligible youth in the year 2016.
+
+Do you need to create any new variables? What variables? How?
+
+> Yes. I need to create like four/five new variable: total number of eligible youth per year, the year, separate race and ethnicity, and maybe months of the year. I will use mutate to do this.
+
+Do you need to add new data (join) to your data? What data? How?
+
+> Possibly not. I feel like the information I need is already contained in the dataset.
+
+Are there any variables you can exclude for your data?
+
+> Possible not. I feel like I would need all the infromation in my dataset since I only have three variables and I need these variables to create new variables.
+
+Do you need pivot your data in any way? Why? How?
+
+> Possible. I do not know, but there is a chance that I will need to because I realize that in the row of Race/Ethncity, I would need to separate the race and ethnicity.
+
+Do you need to summarize any of the variable? Which ones? How?
+
+> Yes. I will need to get the total number of eligible indiviuals for each race or ethncity per year and this will require summarizing.
+
+What other aspects of your data need to be "fixed" in order to make your data visualizations?
+
+> I need to make sure which ethncity goes into which race and make sure the names are consistent throughout the data.
+
