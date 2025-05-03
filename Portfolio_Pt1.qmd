@@ -23,12 +23,11 @@ Describe your data, including variables and data types.
 ```{r}
 #| label: Checking my data
 
-race <- read.csv("Data_Raw/7.4-race-ethnicity-statewide_q4_2024_odp.csv")
-str(race)
+race <- read_csv("Data_Raw/7.4-race-ethnicity-statewide_q4_2024_odp.csv")
 ```
 > My data is made up of eligible individuals under age 21 that were in enrolled in Medi-Cal from 2012 to the end of 2024.
 
-> The variable names are as follows: Reporting Period, Race Ethnicity, and Number of Eligible Individuals. All of these variables are characters.
+> The variable names are as follows: Reporting Period, Race Ethnicity, and Number of Eligible Individuals. Two of these variables are characters while one of them is numeric.
 
 Identify the research questions you want to answer.
 
