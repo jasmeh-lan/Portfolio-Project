@@ -17,7 +17,7 @@ library(ggplot2)
 ```
 
 
-# Portgolio Part 2: Data Cleaning and Rough Draft
+# Portfolio Part 2: Data Cleaning and Rough Draft
 
 The Portfolio component is a place for you to put your R skills into action on a problem you are interested in with the goal of having a project you could are with future employers.
 
